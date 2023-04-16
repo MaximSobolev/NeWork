@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.PostsWallFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/postButton"
+            style="?attr/materialIconButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/second_dp"
+            android:layout_marginTop="@dimen/zero_dp"
+            app:icon="@drawable/ic_outline_home_24"
+            app:iconSize="@dimen/fourth_dp"
+            app:iconTint="@color/gray"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/home"/>
+
+        <Button
+            android:id="@+id/eventButton"
+            style="?attr/materialIconButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/first_dp"
+            app:icon="@drawable/ic_outline_calendar_today_24"
+            app:iconSize="@dimen/fourth_dp"
+            app:iconTint="@color/gray"
+            app:layout_constraintStart_toEndOf="@id/postButton"
+            app:layout_constraintTop_toTopOf="@id/postButton"
+            android:contentDescription="@string/event"/>
+
+        <Button
+            android:id="@+id/myProfileButton"
+            style="?attr/materialIconButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/first_dp"
+            android:layout_marginEnd="@dimen/second_dp"
+            app:icon="@drawable/ic_outline_person_outline_24"
+            app:iconSize="@dimen/fourth_dp"
+            app:iconTint="@color/gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/postButton"
+            android:contentDescription="@string/my_profile"/>
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="@dimen/sixth_dp"
+            android:layout_height="@dimen/sixth_dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_netelogy"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/postButton"
+            app:layout_constraintTop_toTopOf="@id/postButton" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/navBarrier"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/null_dp"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="postButton, logo, myProfileButton, eventButton" />
+
+        <TextView
+            android:id="@+id/dividingLine"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/light_gray"
+            app:layout_constraintTop_toTopOf="@id/navBarrier"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipeRefreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/null_dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dividingLine"
+            app:layout_constraintVertical_bias="1.0">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:itemCount="2"
+                    tools:listitem="@layout/card_post" />
+
+            </ScrollView>
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addPost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:contentDescription="@string/add_new_post"
+        app:backgroundTint="@color/blue"
+        app:srcCompat="@drawable/ic_baseline_add_24"
+        app:tint="@color/white" />
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

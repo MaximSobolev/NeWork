@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/userContainer"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:gravity="center_horizontal"
+    android:paddingTop="@dimen/first_dp">
+
+    <ImageView
+        android:id="@+id/userAvatar"
+        android:layout_width="@dimen/eight_dp"
+        android:layout_height="@dimen/eight_dp"
+        tools:src = "@tools:sample/avatars"
+        android:contentDescription="@string/avatar"/>
+
+    <TextView
+        android:id="@+id/userName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text = "Maxim Sobolev"
+        android:textStyle="bold"
+        android:textSize="@dimen/eighteen_sp"
+        android:textColor="@color/black"
+        android:layout_gravity="center"
+        android:layout_marginStart="@dimen/first_dp"/>
+
+</LinearLayout>

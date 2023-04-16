@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_margin="@dimen/second_dp"
+    android:orientation="vertical"
+    app:contentPadding="@dimen/second_dp"
+    app:cardBackgroundColor="@color/white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/dialogText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/choose_the_person"
+            android:layout_gravity="center_horizontal"
+            android:textSize="@dimen/twenty_sp"
+            android:textStyle="bold"
+            android:textColor="@color/blue"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/nameContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/second_dp"
+            android:layout_marginTop="@dimen/first_dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/dialogText">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/name" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ScrollView
+            android:id="@+id/userListContainer"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/thirty_ninth_dp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="@dimen/second_dp"
+            android:layout_marginStart="@dimen/second_dp"
+            app:layout_constraintTop_toBottomOf="@id/nameContainer">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/userList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/first_dp"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="4"
+                tools:listitem="@layout/card_mentioned_users" />
+
+
+        </ScrollView>
+
+        <ImageView
+            android:id="@+id/userAvatar"
+            android:layout_width="@dimen/eight_dp"
+            android:layout_height="@dimen/eight_dp"
+            tools:src = "@tools:sample/avatars"
+            android:layout_marginTop="@dimen/second_dp"
+            android:layout_marginStart="@dimen/second_dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/dialogText"
+            android:contentDescription="@string/avatar_mentioned_user"/>
+
+        <TextView
+            android:id="@+id/userName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/userAvatar"
+            app:layout_constraintTop_toTopOf="@id/userAvatar"
+            app:layout_constraintBottom_toBottomOf="@id/userAvatar"
+            tools:text = "Maxim Sobolev"
+            android:textStyle="bold"
+            android:textSize="@dimen/eighteen_sp"
+            android:textColor="@color/black"
+            android:layout_marginStart="@dimen/first_dp"/>
+
+        <ImageView
+            android:id="@+id/deleteUser"
+            android:layout_width="@dimen/fourth_dp"
+            android:layout_height="@dimen/fourth_dp"
+            android:layout_marginTop="@dimen/first_dp"
+            android:layout_marginEnd="@dimen/second_dp"
+            android:contentDescription="@string/delete_mention_user"
+            android:src="@drawable/ic_baseline_close_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/dialogText"
+            app:tint="@color/gray"
+            android:background="?attr/selectableItemBackgroundBorderless"/>
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/userGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="userAvatar, userName, deleteUser"/>
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/findUserGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="nameContainer, userListContainer"/>
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/firstBarrier"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="nameContainer, userAvatar, userListContainer"/>
+
+        <Button
+            android:id="@+id/addButton"
+            style="@style/Widget.Material3.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="@dimen/second_dp"
+            android:layout_marginEnd="@dimen/second_dp"
+            android:text="@string/add_this_person"
+            android:textSize="@dimen/fourteen_sp"
+            app:cornerRadius="@dimen/first_dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/firstBarrier"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</com.google.android.material.card.MaterialCardView>

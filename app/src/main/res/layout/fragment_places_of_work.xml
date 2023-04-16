@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.PlacesOfWorkFragment">
+
+    <FrameLayout
+        android:id="@+id/navContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/first_dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/backButton"
+            style="?attr/materialIconButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/first_dp"
+            android:contentDescription="@string/back"
+            app:icon="@drawable/ic_baseline_arrow_back_24"
+            app:iconSize="@dimen/third_dp"
+            app:iconTint="@color/gray" />
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="@dimen/sixth_dp"
+            android:layout_height="@dimen/sixth_dp"
+            android:layout_gravity="center"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_netelogy" />
+
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/mainText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/second_dp"
+        android:text="@string/enter_your_places_of_work"
+        android:textColor="@color/blue"
+        android:textSize="@dimen/twenty_four_sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/navContainer" />
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/null_dp"
+        android:layout_marginTop="@dimen/second_dp"
+        app:layout_constraintBottom_toTopOf="@id/addMoreButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mainText">
+
+        <!--        <androidx.recyclerview.widget.RecyclerView-->
+        <!--            android:id="@+id/list"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"-->
+        <!--            tools:itemCount="2"-->
+        <!--            tools:listitem="@layout/card_job" />-->
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/jobListText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/your_places_of_works"
+                android:textColor="@color/blue"
+                android:textSize="@dimen/sixteen_sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/jobListText"
+                tools:itemCount="2"
+                tools:listitem="@layout/card_job" />
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/previewJobGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="jobListText, list" />
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/placeOfWorkContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/second_dp"
+                app:boxStrokeColor="@color/gray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/list">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/placeOfWork"
+                    android:layout_width="@dimen/thirty_fifth_dp"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/place_of_work" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/positionContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/first_dp"
+                app:boxStrokeColor="@color/gray"
+                app:layout_constraintStart_toStartOf="@id/placeOfWorkContainer"
+                app:layout_constraintTop_toBottomOf="@id/placeOfWorkContainer">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/position"
+                    android:layout_width="@dimen/thirty_fifth_dp"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/position" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/startText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/first_dp"
+                android:text="@string/started_working"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/sixteen_sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/positionContainer"
+                app:layout_constraintTop_toBottomOf="@id/positionContainer" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/fromMonthContainer"
+                android:layout_width="@dimen/null_dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/zero_dp"
+                android:layout_marginEnd="@dimen/zero_dp"
+                app:boxStrokeColor="@color/gray"
+                app:layout_constraintEnd_toStartOf="@id/fromYearContainer"
+                app:layout_constraintStart_toStartOf="@id/placeOfWorkContainer"
+                app:layout_constraintTop_toBottomOf="@id/startText">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/fromMonth"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/month"
+                    android:inputType="datetime"
+                    android:maxLength="2" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/fromYearContainer"
+                android:layout_width="@dimen/null_dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/zero_dp"
+                app:boxStrokeColor="@color/gray"
+                app:layout_constraintEnd_toEndOf="@id/placeOfWorkContainer"
+                app:layout_constraintStart_toEndOf="@id/fromMonthContainer"
+                app:layout_constraintTop_toTopOf="@id/fromMonthContainer">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/fromYear"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/year"
+                    android:inputType="datetime"
+                    android:maxLength="4" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/finishText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/first_dp"
+                android:text="@string/finished_working"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/sixteen_sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/fromMonthContainer"
+                app:layout_constraintTop_toBottomOf="@id/fromMonthContainer" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/toMonthContainer"
+                android:layout_width="@dimen/null_dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/zero_dp"
+                android:layout_marginEnd="@dimen/zero_dp"
+                app:boxStrokeColor="@color/gray"
+                app:layout_constraintEnd_toStartOf="@id/toYearContainer"
+                app:layout_constraintStart_toStartOf="@id/fromMonthContainer"
+                app:layout_constraintTop_toBottomOf="@id/finishText">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/toMonth"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/month"
+                    android:inputType="datetime"
+                    android:maxLength="2" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/toYearContainer"
+                android:layout_width="@dimen/null_dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/zero_dp"
+                app:boxStrokeColor="@color/gray"
+                app:layout_constraintEnd_toEndOf="@id/placeOfWorkContainer"
+                app:layout_constraintStart_toEndOf="@id/toMonthContainer"
+                app:layout_constraintTop_toTopOf="@id/toMonthContainer">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/toYear"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/year"
+                    android:inputType="datetime"
+                    android:maxLength="4" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/linkContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/first_dp"
+                app:boxStrokeColor="@color/gray"
+                app:helperText="@string/link_helper_text"
+                app:helperTextEnabled="true"
+                app:layout_constraintStart_toStartOf="@id/placeOfWorkContainer"
+                app:layout_constraintTop_toBottomOf="@id/toMonthContainer">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/link"
+                    android:layout_width="@dimen/thirty_fifth_dp"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/link" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/deleteJobs"
+                style="@style/Widget.Material3.Button.IconButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/delete_place_of_work"
+                app:icon="@drawable/ic_baseline_close_24"
+                app:iconSize="@dimen/third_dp"
+                app:iconTint="@color/gray"
+                app:layout_constraintStart_toEndOf="@id/placeOfWorkContainer"
+                app:layout_constraintTop_toBottomOf="@id/list"/>
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/addJobGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="placeOfWorkContainer, positionContainer,
+                    startText, fromMonthContainer, fromYearContainer,
+                    finishText, toMonthContainer, toYearContainer, linkContainer, deleteJobs"
+                />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/addMoreButton"
+        style="@style/Widget.Material3.Button.TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/second_dp"
+        android:layout_marginBottom="@dimen/first_dp"
+        android:text="@string/add_more"
+        android:textColor="@color/gray"
+        android:textSize="@dimen/fourteen_sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/sendJobs"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/sendJobs"
+        style="@style/Widget.Material3.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/send"
+        android:textSize="@dimen/fourteen_sp"
+        app:cornerRadius="@dimen/first_dp"
+        app:layout_constraintBottom_toBottomOf="@id/addMoreButton"
+        app:layout_constraintEnd_toStartOf="@id/skipButton"
+        app:layout_constraintStart_toEndOf="@id/addMoreButton" />
+
+    <Button
+        android:id="@+id/skipButton"
+        style="@style/Widget.Material3.Button.TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/skip_this_step"
+        android:textColor="@color/gray"
+        android:textSize="@dimen/fourteen_sp"
+        app:cornerRadius="@dimen/first_dp"
+        app:layout_constraintBottom_toBottomOf="@id/addMoreButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/sendJobs" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="@dimen/sixth_dp"
+        android:layout_height="@dimen/sixth_dp"
+        android:layout_gravity="center"
+        android:progressTint="@color/green"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

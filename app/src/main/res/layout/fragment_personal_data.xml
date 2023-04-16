@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.PersonalDataFragment">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/first_dp">
+
+        <Button
+            android:id="@+id/backButton"
+            style="?attr/materialIconButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/first_dp"
+            app:icon="@drawable/ic_baseline_arrow_back_24"
+            app:iconSize="@dimen/third_dp"
+            app:iconTint="@color/gray" />
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="@dimen/sixth_dp"
+            android:layout_height="@dimen/sixth_dp"
+            android:layout_gravity="center"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_netelogy" />
+
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/second_dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/personalDataText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/enter_your_personal_details"
+            android:textColor="@color/blue"
+            android:textSize="@dimen/twenty_four_sp"
+            android:textStyle="bold" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/second_dp"
+            android:layout_gravity="center"
+            app:boxStrokeColor="@color/gray">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/name"
+                android:layout_width="@dimen/thirty_fifth_dp"
+                android:layout_height="@dimen/eight_dp"
+                android:hint="@string/name" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:id="@+id/avatarButtonContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="@dimen/fortieth_dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/first_dp"
+                android:text="@string/you_can_upload_an_avatar_so_people_can_recognize_you"
+                android:textAlignment="center"
+                android:textColor="@color/gray"
+                android:textSize="@dimen/twenty_sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/first_dp">
+
+                <Button
+                    android:id="@+id/addPhoto"
+                    style="@style/Widget.Material3.Button.TextButton.Icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/add_photo"
+                    android:textColor="@color/gray"
+                    android:textSize="@dimen/fourteen_sp"
+                    app:icon="@drawable/ic_baseline_add_a_photo_24"
+                    app:iconSize="@dimen/fourth_dp"
+                    app:iconTint="@color/gray" />
+
+                <Button
+                    android:id="@+id/insertPhoto"
+                    style="@style/Widget.Material3.Button.TextButton.Icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/insert_photo"
+                    android:textColor="@color/gray"
+                    android:textSize="@dimen/fourteen_sp"
+                    app:icon="@drawable/ic_baseline_insert_photo_24"
+                    app:iconSize="@dimen/fourth_dp"
+                    app:iconTint="@color/gray" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/avatarContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:visibility="visible">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/avatar"
+                android:layout_width="@dimen/fifteenth_dp"
+                android:layout_height="@dimen/fifteenth_dp"
+                android:layout_marginTop="@dimen/second_dp"
+                android:contentDescription="@string/avatar"
+                app:cornerSize="50%"
+                app:shapeAppearanceOverlay="@style/circle"
+                android:adjustViewBounds="true"
+                android:padding="@dimen/first_dp"
+                tools:src="@tools:sample/avatars" />
+
+            <Button
+                android:id="@+id/deleteAvatar"
+                style="@style/Widget.Material3.Button.IconButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:contentDescription="@string/delete_avatar"
+                app:icon="@drawable/ic_baseline_close_24"
+                app:iconSize="@dimen/third_dp"
+                app:iconTint="@color/blue" />
+
+
+        </FrameLayout>
+
+        <Button
+            android:id="@+id/createAccount"
+            style="@style/Widget.Material3.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/second_dp"
+            android:text="@string/create_account"
+            android:textSize="@dimen/fourteen_sp"
+            app:cornerRadius="@dimen/first_dp" />
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="@dimen/sixth_dp"
+        android:layout_height="@dimen/sixth_dp"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        android:progressTint="@color/green"/>
+
+</LinearLayout>

@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/nameAndPosition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/second_dp"
+        android:layout_marginTop="@dimen/zero_dp"
+        android:textColor="@color/text_color"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Divent - Technic" />
+
+    <TextView
+        android:id="@+id/startAndFinish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/twelve_sp"
+        app:layout_constraintStart_toStartOf="@id/nameAndPosition"
+        app:layout_constraintTop_toBottomOf="@id/nameAndPosition"
+        tools:text="April 2020 - May 2023" />
+
+    <TextView
+        android:id="@+id/link"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/blue"
+        android:textSize="@dimen/twelve_sp"
+        app:layout_constraintStart_toStartOf="@id/nameAndPosition"
+        app:layout_constraintTop_toBottomOf="@id/startAndFinish"
+        tools:text="netology.ru" />
+
+    <!--    <Button-->
+    <!--        android:id="@+id/editJob"-->
+    <!--        style="@style/Widget.Material3.Button.OutlinedButton.Icon"-->
+    <!--        android:layout_marginEnd="@dimen/second_dp"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:text="@string/edit"-->
+    <!--        android:textColor="@color/gray"-->
+    <!--        android:textSize="@dimen/fourteen_sp"-->
+    <!--        app:cornerRadius="@dimen/first_dp"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"/>-->
+
+    <Button
+        android:id="@+id/editButton"
+        style="@style/Widget.Material3.Button.IconButton.Outlined"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/zero_dp"
+        app:cornerRadius="@dimen/first_dp"
+        app:icon="@drawable/outline_edit_24"
+        app:iconTint="@color/gray"
+        app:layout_constraintBottom_toBottomOf="@id/link"
+        app:layout_constraintEnd_toStartOf="@id/deleteButton"
+        app:layout_constraintTop_toTopOf="@id/nameAndPosition"
+        app:strokeColor="@color/gray" />
+
+    <Button
+        android:id="@+id/deleteButton"
+        style="@style/Widget.Material3.Button.IconButton.Outlined"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/second_dp"
+        app:cornerRadius="@dimen/first_dp"
+        app:icon="@drawable/outline_delete_24"
+        app:iconTint="@color/gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/editButton"
+        app:strokeColor="@color/gray" />
+
+
+    <!--    <com.google.android.material.textfield.TextInputLayout-->
+    <!--        android:id="@+id/placeOfWorkContainer"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="@dimen/second_dp"-->
+    <!--        app:boxStrokeColor="@color/gray"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent">-->
+
+    <!--        <com.google.android.material.textfield.TextInputEditText-->
+    <!--            android:id="@+id/placeOfWork"-->
+    <!--            android:layout_width="@dimen/thirty_fifth_dp"-->
+    <!--            android:layout_height="@dimen/eight_dp"-->
+    <!--            android:hint="@string/place_of_work" />-->
+    <!--    </com.google.android.material.textfield.TextInputLayout>-->
+
+    <!--    <com.google.android.material.textfield.TextInputLayout-->
+    <!--        android:id="@+id/positionContainer"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="@dimen/first_dp"-->
+    <!--        app:boxStrokeColor="@color/gray"-->
+    <!--        app:layout_constraintStart_toStartOf="@id/placeOfWorkContainer"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/placeOfWorkContainer">-->
+
+    <!--        <com.google.android.material.textfield.TextInputEditText-->
+    <!--            android:id="@+id/position"-->
+    <!--            android:layout_width="@dimen/thirty_fifth_dp"-->
+    <!--            android:layout_height="@dimen/eight_dp"-->
+    <!--            android:hint="@string/position" />-->
+    <!--    </com.google.android.material.textfield.TextInputLayout>-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/startText"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="@dimen/first_dp"-->
+    <!--        android:text="@string/started_working"-->
+    <!--        android:textColor="@color/text_color"-->
+    <!--        android:textSize="@dimen/sixteen_sp"-->
+    <!--        android:textStyle="bold"-->
+    <!--        app:layout_constraintStart_toStartOf="@id/positionContainer"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/positionContainer" />-->
+
+    <!--    <com.google.android.material.textfield.TextInputLayout-->
+    <!--        android:id="@+id/fromMonthContainer"-->
+    <!--        android:layout_width="@dimen/null_dp"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="@dimen/zero_dp"-->
+    <!--        android:layout_marginEnd="@dimen/zero_dp"-->
+    <!--        app:boxStrokeColor="@color/gray"-->
+    <!--        app:layout_constraintEnd_toStartOf="@id/fromYearContainer"-->
+    <!--        app:layout_constraintStart_toStartOf="@id/placeOfWorkContainer"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/startText">-->
+
+    <!--        <com.google.android.material.textfield.TextInputEditText-->
+    <!--            android:id="@+id/fromMonth"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="@dimen/eight_dp"-->
+    <!--            android:hint="@string/month"-->
+    <!--            android:inputType="datetime"-->
+    <!--            android:maxLength="2"/>-->
+    <!--    </com.google.android.material.textfield.TextInputLayout>-->
+
+    <!--    <com.google.android.material.textfield.TextInputLayout-->
+    <!--        android:id="@+id/fromYearContainer"-->
+    <!--        android:layout_width="@dimen/null_dp"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginStart="@dimen/zero_dp"-->
+    <!--        app:boxStrokeColor="@color/gray"-->
+    <!--        app:layout_constraintEnd_toEndOf="@id/placeOfWorkContainer"-->
+    <!--        app:layout_constraintStart_toEndOf="@id/fromMonthContainer"-->
+    <!--        app:layout_constraintTop_toTopOf="@id/fromMonthContainer">-->
+
+    <!--        <com.google.android.material.textfield.TextInputEditText-->
+    <!--            android:id="@+id/fromYear"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="@dimen/eight_dp"-->
+    <!--            android:hint="@string/year"-->
+    <!--            android:inputType="datetime"-->
+    <!--            android:maxLength="4"/>-->
+    <!--    </com.google.android.material.textfield.TextInputLayout>-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/finishText"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="@dimen/first_dp"-->
+    <!--        android:text="@string/finished_working"-->
+    <!--        android:textColor="@color/text_color"-->
+    <!--        android:textSize="@dimen/sixteen_sp"-->
+    <!--        android:textStyle="bold"-->
+    <!--        app:layout_constraintStart_toStartOf="@id/fromMonthContainer"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/fromMonthContainer" />-->
+
+    <!--    <com.google.android.material.textfield.TextInputLayout-->
+    <!--        android:id="@+id/toMonthContainer"-->
+    <!--        android:layout_width="@dimen/null_dp"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="@dimen/zero_dp"-->
+    <!--        android:layout_marginEnd="@dimen/zero_dp"-->
+    <!--        app:boxStrokeColor="@color/gray"-->
+    <!--        app:layout_constraintEnd_toStartOf="@id/toYearContainer"-->
+    <!--        app:layout_constraintStart_toStartOf="@id/fromMonthContainer"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/finishText">-->
+
+    <!--        <com.google.android.material.textfield.TextInputEditText-->
+    <!--            android:id="@+id/toMonth"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="@dimen/eight_dp"-->
+    <!--            android:hint="@string/month"-->
+    <!--            android:inputType="datetime"-->
+    <!--            android:maxLength="2" />-->
+    <!--    </com.google.android.material.textfield.TextInputLayout>-->
+
+    <!--    <com.google.android.material.textfield.TextInputLayout-->
+    <!--        android:id="@+id/toYearContainer"-->
+    <!--        android:layout_width="@dimen/null_dp"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginStart="@dimen/zero_dp"-->
+    <!--        app:boxStrokeColor="@color/gray"-->
+    <!--        app:layout_constraintEnd_toEndOf="@id/placeOfWorkContainer"-->
+    <!--        app:layout_constraintStart_toEndOf="@id/toMonthContainer"-->
+    <!--        app:layout_constraintTop_toTopOf="@id/toMonthContainer">-->
+
+    <!--        <com.google.android.material.textfield.TextInputEditText-->
+    <!--            android:id="@+id/toYear"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="@dimen/eight_dp"-->
+    <!--            android:hint="@string/year"-->
+    <!--            android:inputType="datetime"-->
+    <!--            android:maxLength="4"/>-->
+    <!--    </com.google.android.material.textfield.TextInputLayout>-->
+
+    <!--    <com.google.android.material.textfield.TextInputLayout-->
+    <!--        android:id="@+id/linkContainer"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="@dimen/first_dp"-->
+    <!--        app:boxStrokeColor="@color/gray"-->
+    <!--        app:helperText="@string/link_helper_text"-->
+    <!--        app:helperTextEnabled="true"-->
+    <!--        app:layout_constraintStart_toStartOf="@id/placeOfWorkContainer"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/toMonthContainer">-->
+
+    <!--        <com.google.android.material.textfield.TextInputEditText-->
+    <!--            android:id="@+id/link"-->
+    <!--            android:layout_width="@dimen/thirty_fifth_dp"-->
+    <!--            android:layout_height="@dimen/eight_dp"-->
+    <!--            android:hint="@string/link" />-->
+    <!--    </com.google.android.material.textfield.TextInputLayout>-->
+
+    <!--    <Button-->
+    <!--        android:id="@+id/deleteJobs"-->
+    <!--        style="@style/Widget.Material3.Button.IconButton"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:contentDescription="@string/delete_place_of_work"-->
+    <!--        app:icon="@drawable/ic_baseline_close_24"-->
+    <!--        app:iconSize="@dimen/third_dp"-->
+    <!--        app:iconTint="@color/gray"-->
+    <!--        app:layout_constraintStart_toEndOf="@id/placeOfWorkContainer"-->
+    <!--        app:layout_constraintTop_toTopOf="@id/placeOfWorkContainer" />-->
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

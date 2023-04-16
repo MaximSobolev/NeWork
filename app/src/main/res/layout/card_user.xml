@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/userContainer"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/zero_dp"
+    android:layout_marginEnd="@dimen/first_dp"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/mentionedUserAvatar"
+        android:layout_width="@dimen/sixth_dp"
+        android:layout_height="@dimen/sixth_dp"
+        android:layout_gravity="center"
+        android:contentDescription="@string/avatar_mentioned_user"
+        tools:src="@tools:sample/avatars[1]" />
+
+    <TextView
+        android:id="@+id/mentionedUserName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/zero_dp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/twelve_sp"
+        android:textStyle="bold"
+        tools:text="Maxim Sobolev" />
+
+</LinearLayout>

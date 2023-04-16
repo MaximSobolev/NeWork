@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.NewPostFragment"
+    android:paddingBottom="@dimen/second_dp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <FrameLayout
+                android:id="@+id/navContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/first_dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <Button
+                    android:id="@+id/backButton"
+                    style="?attr/materialIconButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/first_dp"
+                    android:contentDescription="@string/back"
+                    app:icon="@drawable/ic_baseline_arrow_back_24"
+                    app:iconSize="@dimen/third_dp"
+                    app:iconTint="@color/gray" />
+
+                <ImageView
+                    android:id="@+id/logo"
+                    android:layout_width="@dimen/sixth_dp"
+                    android:layout_height="@dimen/sixth_dp"
+                    android:layout_gravity="center"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/ic_netelogy" />
+
+
+            </FrameLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/messageContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/second_dp"
+                android:layout_marginTop="@dimen/second_dp"
+                app:boxStrokeColor="@color/gray"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/navContainer">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/messageText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/anything_new" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <ImageView
+                android:id="@+id/deleteLink"
+                android:layout_width="@dimen/fourth_dp"
+                android:layout_height="@dimen/fourth_dp"
+                android:layout_marginTop="@dimen/first_dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/delete_link"
+                android:src="@drawable/ic_baseline_close_24"
+                app:layout_constraintEnd_toEndOf="@id/linkContainer"
+                app:layout_constraintTop_toBottomOf="@id/messageContainer"
+                app:tint="@color/gray" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/linkContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/second_dp"
+                app:boxStrokeColor="@color/gray"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/deleteLink">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/linkText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/link" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/linkGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="deleteLink, linkContainer" />
+
+            <ImageView
+                android:id="@+id/deleteMedia"
+                android:layout_width="@dimen/fourth_dp"
+                android:layout_height="@dimen/fourth_dp"
+                android:layout_marginTop="@dimen/first_dp"
+                android:layout_marginEnd="@dimen/second_dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/delete_link"
+                android:src="@drawable/ic_baseline_close_24"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/linkContainer"
+                app:tint="@color/gray" />
+
+            <ImageView
+                android:id="@+id/photoContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/second_dp"
+                android:layout_marginTop="@dimen/zero_dp"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/photo_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/deleteMedia"
+                tools:src="@tools:sample/backgrounds/scenic" />
+
+            <ImageView
+                android:id="@+id/videoPreview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/second_dp"
+                android:layout_marginTop="@dimen/zero_dp"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/video"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/deleteMedia"
+                tools:src="@tools:sample/backgrounds/scenic" />
+
+            <ImageView
+                android:id="@+id/playVideo"
+                android:layout_width="@dimen/eight_dp"
+                android:layout_height="@dimen/eight_dp"
+                android:contentDescription="@string/play"
+                android:src="@drawable/baseline_play_circle_outline_24"
+                app:layout_constraintBottom_toBottomOf="@id/videoPreview"
+                app:layout_constraintEnd_toEndOf="@id/videoPreview"
+                app:layout_constraintStart_toStartOf="@id/videoPreview"
+                app:layout_constraintTop_toTopOf="@id/videoPreview"
+                app:tint="@color/gray" />
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/videoGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="videoPreview, playVideo" />
+
+
+            <ImageView
+                android:id="@+id/audioPreview"
+                android:layout_width="@dimen/seventh_dp"
+                android:layout_height="@dimen/seventh_dp"
+                android:layout_marginStart="@dimen/second_dp"
+                android:layout_marginTop="@dimen/zero_dp"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/audio_label"
+                android:src="@drawable/baseline_audio_file_24"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/deleteMedia"
+                app:tint="@color/gray" />
+
+            <TextView
+                android:id="@+id/audioName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/first_dp"
+                android:text="@string/audio_file"
+                android:textColor="@color/black"
+                android:textSize="@dimen/fourteen_sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/audioPreview"
+                app:layout_constraintStart_toEndOf="@id/audioPreview"
+                app:layout_constraintTop_toTopOf="@id/audioPreview" />
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/audioGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                app:constraint_referenced_ids="audioPreview, audioName" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/firstBarrier"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:barrierDirection="bottom"
+                app:constraint_referenced_ids="photoContent, audioPreview, videoPreview, messageContainer" />
+
+            <TextView
+                android:id="@+id/mentionedUserText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/first_dp"
+                android:text="@string/mentioned_users"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/sixteen_sp"
+                app:layout_constraintStart_toStartOf="@id/messageContainer"
+                app:layout_constraintTop_toBottomOf="@id/firstBarrier" />
+
+
+            <ScrollView
+                android:id="@+id/mentionedUserContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/second_dp"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/mentionedUserText"
+                tools:ignore="NestedScrolling">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/mentionedUserList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/first_dp"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:itemCount="4"
+                    tools:listitem="@layout/card_mentioned_user_add_post" />
+
+            </ScrollView>
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/mentionedUserGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="mentionedUserText, mentionedUserContainer" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/secondBarrier"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/null_dp"
+                app:barrierDirection="bottom"
+                app:constraint_referenced_ids="messageContainer, linkContainer, mentionedUserContainer" />
+
+            <Button
+                android:id="@+id/addLink"
+                style="@style/Widget.Material3.Button.IconButton.Outlined"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/second_dp"
+                android:contentDescription="@string/add_link"
+                app:icon="@drawable/baseline_add_link_24"
+                app:iconSize="@dimen/fourth_dp"
+                app:iconTint="@color/gray"
+                app:layout_constraintStart_toStartOf="@id/messageContainer"
+                app:layout_constraintTop_toBottomOf="@id/secondBarrier"
+                app:strokeColor="@color/gray" />
+
+            <Button
+                android:id="@+id/addAttachment"
+                style="@style/Widget.Material3.Button.IconButton.Outlined"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/first_dp"
+                android:layout_marginTop="@dimen/second_dp"
+                android:contentDescription="@string/add_media_file"
+                app:icon="@drawable/baseline_note_add_24"
+                app:iconSize="@dimen/fourth_dp"
+                app:iconTint="@color/gray"
+                app:layout_constraintStart_toEndOf="@id/addLink"
+                app:layout_constraintTop_toBottomOf="@id/secondBarrier"
+                app:strokeColor="@color/gray" />
+
+            <Button
+                android:id="@+id/addMentionUser"
+                style="@style/Widget.Material3.Button.IconButton.Outlined"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/first_dp"
+                android:layout_marginTop="@dimen/second_dp"
+                android:contentDescription="@string/add_mentioned_users"
+                app:icon="@drawable/outline_person_add_24"
+                app:iconSize="@dimen/fourth_dp"
+                app:iconTint="@color/gray"
+                app:layout_constraintStart_toEndOf="@id/addAttachment"
+                app:layout_constraintTop_toBottomOf="@id/secondBarrier"
+                app:strokeColor="@color/gray" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addPost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:contentDescription="@string/save"
+        app:backgroundTint="@color/blue"
+        app:srcCompat="@drawable/baseline_done_24"
+        app:tint="@color/white" />
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

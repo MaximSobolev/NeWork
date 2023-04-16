@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.UserPageFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/backButton"
+            style="?attr/materialIconButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/first_dp"
+            android:layout_marginTop="@dimen/zero_dp"
+            android:contentDescription="@string/back"
+            app:icon="@drawable/ic_baseline_arrow_back_24"
+            app:iconSize="@dimen/fourth_dp"
+            app:iconTint="@color/gray"
+            app:layout_constraintBottom_toBottomOf="@id/navBarrier"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/topBarrier" />
+
+        <Button
+            android:id="@+id/postButton"
+            style="?attr/materialIconButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/second_dp"
+            android:layout_marginTop="@dimen/zero_dp"
+            android:contentDescription="@string/home"
+            app:icon="@drawable/ic_outline_home_24"
+            app:iconSize="@dimen/fourth_dp"
+            app:iconTint="@color/gray"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/eventButton"
+            style="?attr/materialIconButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/first_dp"
+            android:contentDescription="@string/event"
+            app:icon="@drawable/ic_outline_calendar_today_24"
+            app:iconSize="@dimen/fourth_dp"
+            app:iconTint="@color/gray"
+            app:layout_constraintStart_toEndOf="@id/postButton"
+            app:layout_constraintTop_toTopOf="@id/postButton" />
+
+        <Button
+            android:id="@+id/myProfileButton"
+            style="?attr/materialIconButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/first_dp"
+            android:layout_marginEnd="@dimen/second_dp"
+            android:contentDescription="@string/my_profile"
+            app:icon="@drawable/ic_outline_person_outline_24"
+            app:iconSize="@dimen/fourth_dp"
+            app:iconTint="@color/gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/postButton" />
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="@dimen/sixth_dp"
+            android:layout_height="@dimen/sixth_dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_netelogy"
+            app:layout_constraintBottom_toBottomOf="@id/navBarrier"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/topBarrier" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/navButtonGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="postButton, myProfileButton, eventButton" />
+
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/navBarrier"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/null_dp"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="postButton, backButton, logo" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/topBarrier"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/null_dp"
+            app:barrierDirection="top"
+            app:constraint_referenced_ids="postButton, logo, backButton" />
+
+        <TextView
+            android:id="@+id/dividingLine"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/light_gray"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/navBarrier" />
+
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/dividingLine">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/avatar"
+                    android:layout_width="@dimen/fifteenth_dp"
+                    android:layout_height="@dimen/fifteenth_dp"
+                    android:layout_marginStart="@dimen/second_dp"
+                    android:layout_marginTop="@dimen/second_dp"
+                    android:contentDescription="@string/my_avatar"
+                    app:cornerSize="50%"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:src="@tools:sample/avatars" />
+
+                <LinearLayout
+                    android:id="@+id/dataContainer"
+                    android:layout_width="@dimen/null_dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/second_dp"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="@id/avatar"
+                    app:layout_constraintStart_toEndOf="@id/avatar"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/avatar">
+
+                    <TextView
+                        android:id="@+id/name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/blue"
+                        android:textSize="@dimen/twenty_four_sp"
+                        android:textStyle="bold"
+                        tools:text="Maxim Sobolev" />
+
+                    <TextView
+                        android:id="@+id/job"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/gray"
+                        android:textSize="@dimen/sixteen_sp"
+                        android:textStyle="bold"
+                        tools:text="engineer - OAO Uralgiprotrans" />
+
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/menuButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/second_dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/menu"
+                    android:src="@drawable/baseline_more_vert_24"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/avatar" />
+
+                <ru.netology.nework.view.JobView
+                    android:id="@+id/jobView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/second_dp"
+                    android:layout_marginTop="@dimen/first_dp"
+                    app:anotherTextSize="@dimen/fourteen_sp"
+                    app:color="@color/red"
+                    app:fromToColor="@color/gray"
+                    app:jobTextColor="@color/black"
+                    app:jobTextSize="@dimen/sixteen_sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/avatar"
+                    app:linkTextColor="@color/link_color" />
+
+                <androidx.constraintlayout.widget.Barrier
+                    android:id="@+id/firstBarrier"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/null_dp"
+                    app:barrierDirection="bottom"
+                    app:constraint_referenced_ids="avatar, jobView" />
+
+                <TextView
+                    android:id="@+id/secondDividingLine"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/first_dp"
+                    android:background="@color/light_gray"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/firstBarrier" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/wallList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/secondDividingLine"
+                    tools:itemCount="2"
+                    tools:listitem="@layout/card_post" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addPost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:contentDescription="@string/add_new_post"
+        app:backgroundTint="@color/blue"
+        app:srcCompat="@drawable/ic_baseline_add_24"
+        app:tint="@color/white" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="JobView">
+        <attr name="color" format="color|reference"/>
+        <attr name="jobTextColor" format="color|reference"/>
+        <attr name="linkTextColor" format="color|reference"/>
+        <attr name="fromToColor" format="color|reference"/>
+        <attr name="jobTextSize" format="dimension|reference"/>
+        <attr name="anotherTextSize" format="dimension|reference"/>
+    </declare-styleable>
+</resources>

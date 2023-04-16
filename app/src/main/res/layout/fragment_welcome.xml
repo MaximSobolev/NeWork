@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.WelcomeFragment">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="@dimen/sixth_dp"
+        android:layout_height="@dimen/sixth_dp"
+        android:layout_marginTop="@dimen/first_dp"
+        android:src="@drawable/ic_netelogy"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <LinearLayout
+        android:id="@+id/contentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+    <TextView
+        android:id="@+id/welcomeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/welcome_to_nework"
+        android:textColor="@color/blue"
+        android:layout_gravity="center"
+        android:textSize="@dimen/thirty_six_sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/descriptionText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/zero_dp"
+        android:text="@string/social_network_of_professionals"
+        android:textColor="@color/gray"
+        android:textSize="@dimen/eighteen_sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/signInButton"
+        style="@style/Widget.Material3.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/second_dp"
+        android:text="@string/sign_in"
+        android:textSize="@dimen/fourteen_sp"
+        app:cornerRadius="@dimen/first_dp" />
+
+    <Button
+        android:id="@+id/signUpButton"
+        style="@style/Widget.Material3.Button.TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/zero_dp"
+        android:text="@string/sign_up"
+        android:textColor="@color/gray"
+        android:textSize="@dimen/fourteen_sp"
+        app:cornerRadius="@dimen/first_dp" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/userContainer"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingEnd="@dimen/first_dp"
+    tools:ignore="RtlSymmetry">
+
+
+    <ImageView
+        android:id="@+id/mentionedUserAvatar"
+        android:layout_width="@dimen/sixth_dp"
+        android:layout_height="@dimen/sixth_dp"
+        android:layout_gravity="center"
+        android:contentDescription="@string/avatar_mentioned_user"
+        tools:src="@tools:sample/avatars[1]"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="@id/startBarrier"
+        app:layout_constraintEnd_toEndOf="@id/endBarrier"/>
+
+    <ImageView
+        android:id="@+id/deleteUser"
+        android:layout_width="@dimen/third_dp"
+        android:layout_height="@dimen/third_dp"
+        android:layout_marginStart="@dimen/zero_dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/delete_mention_user"
+        android:src="@drawable/ic_baseline_close_24"
+        app:tint="@color/gray"
+        app:layout_constraintTop_toTopOf="@id/mentionedUserAvatar"
+        app:layout_constraintStart_toEndOf="@id/mentionedUserAvatar"/>
+
+
+    <TextView
+        android:id="@+id/mentionedUserName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/zero_dp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/twelve_sp"
+        android:textStyle="bold"
+        tools:text="Maxim Sobolev"
+        app:layout_constraintTop_toBottomOf="@id/mentionedUserAvatar"
+        app:layout_constraintStart_toStartOf="@id/startBarrier"
+        app:layout_constraintEnd_toEndOf="@id/endBarrier"
+        />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/startBarrier"
+        android:layout_width="@dimen/null_dp"
+        android:layout_height="match_parent"
+        app:barrierDirection="start"
+        app:constraint_referenced_ids="mentionedUserName, mentionedUserAvatar"/>
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/endBarrier"
+        android:layout_width="@dimen/null_dp"
+        android:layout_height="match_parent"
+        app:barrierDirection="end"
+        app:constraint_referenced_ids="mentionedUserName, mentionedUserAvatar"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

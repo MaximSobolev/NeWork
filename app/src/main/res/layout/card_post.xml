@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/first_dp">
+
+    <ImageView
+        android:id="@+id/avatar"
+        android:layout_width="@dimen/seventh_dp"
+        android:layout_height="@dimen/seventh_dp"
+        android:layout_marginStart="@dimen/second_dp"
+        android:contentDescription="@string/avatar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@tools:sample/avatars" />
+
+    <LinearLayout
+        android:id="@+id/nameContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/first_dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@id/avatar"
+        app:layout_constraintStart_toEndOf="@id/avatar"
+        app:layout_constraintTop_toTopOf="@id/avatar">
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="@dimen/eighteen_sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/avatar"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@tools:sample/lorem[2]" />
+
+        <TextView
+            android:id="@+id/job"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/fourteen_sp"
+            app:layout_constraintStart_toStartOf="@id/name"
+            app:layout_constraintTop_toBottomOf="@id/name"
+            tools:text="@tools:sample/lorem[2]" />
+
+        <TextView
+            android:id="@+id/published"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/twelve_sp"
+            app:layout_constraintStart_toStartOf="@id/name"
+            app:layout_constraintTop_toBottomOf="@id/job"
+            tools:text="@tools:sample/lorem[2]" />
+
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/userBarrier"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/null_dp"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="avatar, nameContainer" />
+
+    <ImageView
+        android:id="@+id/menuButton"
+        android:layout_width="@dimen/third_dp"
+        android:layout_height="@dimen/third_dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/menu"
+        android:src="@drawable/baseline_more_vert_24"
+        app:layout_constraintEnd_toEndOf="@id/content"
+        app:layout_constraintTop_toTopOf="@id/avatar" />
+
+    <TextView
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/second_dp"
+        android:layout_marginTop="@dimen/first_dp"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/sixteen_sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/userBarrier"
+        tools:text="@tools:sample/lorem[20]" />
+
+    <ImageView
+        android:id="@+id/photoContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/second_dp"
+        android:layout_marginTop="@dimen/first_dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/photo_content"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/content"
+        tools:src="@tools:sample/backgrounds/scenic" />
+
+    <ImageView
+        android:id="@+id/videoPreview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/second_dp"
+        android:layout_marginTop="@dimen/first_dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/video"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/content"
+        tools:src="@tools:sample/backgrounds/scenic" />
+
+    <ImageView
+        android:id="@+id/playVideo"
+        android:layout_width="@dimen/eight_dp"
+        android:layout_height="@dimen/eight_dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/play"
+        android:src="@drawable/baseline_play_circle_outline_24"
+        app:layout_constraintBottom_toBottomOf="@id/videoPreview"
+        app:layout_constraintEnd_toEndOf="@id/videoPreview"
+        app:layout_constraintStart_toStartOf="@id/videoPreview"
+        app:layout_constraintTop_toTopOf="@id/videoPreview"
+        app:tint="@color/gray" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/videoGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="videoPreview, playVideo" />
+
+
+    <ImageView
+        android:id="@+id/audioPreview"
+        android:layout_width="@dimen/seventh_dp"
+        android:layout_height="@dimen/seventh_dp"
+        android:layout_marginTop="@dimen/first_dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/audio_label"
+        android:src="@drawable/baseline_audio_file_24"
+        app:layout_constraintStart_toStartOf="@id/content"
+        app:layout_constraintTop_toBottomOf="@id/content"
+        app:tint="@color/gray" />
+
+    <TextView
+        android:id="@+id/audioName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/first_dp"
+        android:text="@string/audio_file"
+        android:textColor="@color/black"
+        android:textSize="@dimen/fourteen_sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/audioPreview"
+        app:layout_constraintStart_toEndOf="@id/audioPreview"
+        app:layout_constraintTop_toTopOf="@id/audioPreview" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/playAudio"
+        style="?attr/materialIconButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/second_dp"
+        android:checkable="true"
+        android:contentDescription="@string/play"
+        app:icon="@drawable/audio_player"
+        app:iconSize="@dimen/fourth_dp"
+        app:iconTint="@color/gray"
+        app:layout_constraintBottom_toBottomOf="@id/audioPreview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/audioPreview" />
+
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/audioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:constraint_referenced_ids="audioPreview, audioName, playAudio" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/firstBarrier"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/null_dp"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="videoPreview, photoContent, audioPreview,content" />
+
+    <TextView
+        android:id="@+id/linkText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/second_dp"
+        android:layout_marginTop="@dimen/first_dp"
+        android:text="@string/link_text"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/sixteen_sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/firstBarrier" />
+
+    <TextView
+        android:id="@+id/link"
+        android:layout_width="@dimen/null_dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/zero_dp"
+        android:layout_marginTop="@dimen/first_dp"
+        android:layout_marginEnd="@dimen/second_dp"
+        android:autoLink="web"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:textColor="@color/blue"
+        android:textSize="@dimen/sixteen_sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/linkText"
+        app:layout_constraintTop_toBottomOf="@id/firstBarrier"
+        tools:text="@tools:sample/lorem[7]" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/linkGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="link, linkText" />
+
+    <TextView
+        android:id="@+id/mentionedUserText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/first_dp"
+        android:text="@string/mentioned_users"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/sixteen_sp"
+        app:layout_constraintStart_toStartOf="@id/avatar"
+        app:layout_constraintTop_toBottomOf="@id/link" />
+
+    <ScrollView
+        android:id="@+id/mentionedUserContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/second_dp"
+        android:layout_marginTop="@dimen/zero_dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mentionedUserText">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/mentionedUserList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:itemCount="4"
+            tools:listitem="@layout/card_user" />
+
+    </ScrollView>
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/mentionedUserGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="mentionedUserText, mentionedUserContainer" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/secondBarrier"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/null_dp"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="firstBarrier, link, mentionedUserContainer" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/likeButton"
+        style="@style/Widget.Material3.Button.TextButton.Icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/zero_dp"
+        android:backgroundTint="@android:color/transparent"
+        android:checkable="true"
+        android:textColor="@color/gray"
+        android:textSize="@dimen/fourteen_sp"
+        app:icon="@drawable/ic_like"
+        app:iconSize="@dimen/third_dp"
+        app:iconTint="@color/like_button_tint"
+        app:layout_constraintStart_toStartOf="@id/avatar"
+        app:layout_constraintTop_toBottomOf="@id/secondBarrier"
+        tools:text="999k" />
+
+    <TextView
+        android:id="@+id/dividingLine"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/zero_dp"
+        android:background="@color/light_gray"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/likeButton" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

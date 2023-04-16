@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/welcomeFragment">
+
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="ru.netology.nework.ui.WelcomeFragment"
+        android:label="welcome_fragment"
+        tools:layout="@layout/fragment_welcome">
+        <action
+            android:id="@+id/welcomeFragmentToSignInFragment"
+            app:destination="@id/signInFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out" />
+        <action
+            android:id="@+id/welcomeFragmentToSignUpFragment"
+            app:destination="@id/signUpFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out" />
+        <action
+            android:id="@+id/welcomeFragmentToPostsWallFragment"
+            app:destination="@id/postsWallFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popUpTo="@id/welcomeFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/signInFragment"
+        android:name="ru.netology.nework.ui.SignInFragment"
+        android:label="sign_in_fragment"
+        tools:layout="@layout/fragment_sign_in">
+        <action
+            android:id="@+id/signInFragmentToSignUpFragment"
+            app:destination="@id/signUpFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out" />
+        <action
+            android:id="@+id/signInFragmentToWelcomeFragment"
+            app:destination="@id/welcomeFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out" />
+        <action
+            android:id="@+id/signInFragmentToPostsWallFragment"
+            app:destination="@id/postsWallFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popUpTo="@id/signInFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="ru.netology.nework.ui.SignUpFragment"
+        android:label="sign_up_fragment"
+        tools:layout="@layout/fragment_sign_in">
+        <action
+            android:id="@+id/signUpFragmentToSignInFragment"
+            app:destination="@id/signInFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out" />
+        <action
+            android:id="@+id/signUpFragmentToPersonalDataFragment"
+            app:destination="@id/personalDataFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out" />
+        <action
+            android:id="@+id/signUpFragmentToWelcomeFragment"
+            app:destination="@id/welcomeFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/personalDataFragment"
+        android:name="ru.netology.nework.ui.PersonalDataFragment"
+        android:label="personal_data_fragment"
+        tools:layout="@layout/fragment_personal_data">
+        <action
+            android:id="@+id/personalDataFragmentToPlacesOfWorkFragment"
+            app:destination="@id/placesOfWorkFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/placesOfWorkFragment"
+        android:name="ru.netology.nework.ui.PlacesOfWorkFragment"
+        android:label="places_of_work"
+        tools:layout="@layout/fragment_places_of_work">
+        <action
+            android:id="@+id/placesOfWorkFragmentToPostsWallFragment"
+            app:destination="@id/postsWallFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popUpTo="@id/placesOfWorkFragment"
+            app:popUpToInclusive="true" />
+
+        <argument
+            android:name="editJobsGraph"
+            android:defaultValue="false"
+            app:argType="boolean" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/postsWallFragment"
+        android:name="ru.netology.nework.ui.PostsWallFragment"
+        android:label="posts_wall_fragment"
+        tools:layout="@layout/fragment_posts_wall">
+
+        <action
+            android:id="@+id/postsWallFragmentToNewPostFragment"
+            app:destination="@id/newPostFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out" />
+        <action
+            android:id="@+id/postsWallFragmentToUserPageFragment"
+            app:destination="@id/userPageFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out" />
+        <action
+            android:id="@+id/postsWallFragmentToEventPageFragment"
+            app:destination="@id/eventPageFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popUpTo="@id/postsWallFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/postsWallFragmentToMediaFragment"
+            app:destination="@id/mediaFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/userPageFragment"
+        android:name="ru.netology.nework.ui.UserPageFragment"
+        android:label="user_page_fragment"
+        tools:layout="@layout/fragment_user_page">
+        <action
+            android:id="@+id/userPageFragmentToPostsWallFragment"
+            app:destination="@id/postsWallFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popUpTo="@id/userPageFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/userPageFragmentToEventPageFragment"
+            app:destination="@id/eventPageFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popUpTo="@id/userPageFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/userPageFragmentToPlaceToWorkFragment"
+            app:destination="@id/placesOfWorkFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out" />
+        <action
+            android:id="@+id/userPageFragmentToUserPageFragment"
+            app:destination="@id/userPageFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out" />
+        <action
+            android:id="@+id/userPageFragmentToNewPostFragment"
+            app:destination="@id/newPostFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out" />
+        <action
+            android:id="@+id/userPageFragmentToWelcomeFragment"
+            app:destination="@id/welcomeFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popUpTo="@id/welcomeFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/userPageFragmentToMediaFragment"
+            app:destination="@id/mediaFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"/>
+
+        <argument
+            android:name="userId"
+            android:defaultValue="0"
+            app:argType="integer" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/eventPageFragment"
+        android:name="ru.netology.nework.ui.EventPageFragment"
+        android:label="event_page_fragment"
+        tools:layout="@layout/fragment_event_page">
+        <action
+            android:id="@+id/eventPageFragmentToPostsWallFragment"
+            app:destination="@id/postsWallFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popUpTo="@id/eventPageFragment" />
+        <action
+            android:id="@+id/eventPageFragmentToUserPageFragment"
+            app:destination="@id/userPageFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popUpTo="@id/eventPageFragment" />
+        <action
+            android:id="@+id/eventPageFragmentToMediaFragment"
+            app:destination="@id/mediaFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"/>
+
+        <action
+            android:id="@+id/eventPageFragmentToNewEventFragment"
+            app:destination="@id/newEventFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/newPostFragment"
+        android:name="ru.netology.nework.ui.NewPostFragment"
+        android:label="new_post_fragment"
+        tools:layout="@layout/fragment_new_post">
+
+        <argument
+            android:name="editPost"
+            android:defaultValue="@null"
+            app:argType="ru.netology.nework.dto.Post"
+            app:nullable="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/mediaFragment"
+        android:name="ru.netology.nework.ui.MediaFragment"
+        android:label="media_fragment"
+        tools:layout="@layout/fragment_media">
+
+        <argument
+            android:name="attach"
+            android:defaultValue="@null"
+            app:argType="ru.netology.nework.dto.Attachment"
+            app:nullable="true" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/newEventFragment"
+        android:name="ru.netology.nework.ui.NewEventFragment"
+        tools:layout="@layout/fragment_new_event"
+        android:label="new_event_fragment">
+
+        <argument
+            android:name="editEvent"
+            android:defaultValue="@null"
+            app:argType="ru.netology.nework.dto.Event"
+            app:nullable="true" />
+    </fragment>
+
+</navigation>
